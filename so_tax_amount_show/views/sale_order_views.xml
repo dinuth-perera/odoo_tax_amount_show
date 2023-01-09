@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+          <record id="sale_view_order_tax_amount_form" model="ir.ui.view">
+            <field name="name">sale.order_form.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="priority">10</field>
+            <field name="inherit_id" ref="sale.view_order_form" />
+            <field name="arch" type="xml">
+
+              <xpath expr="//page[@name='order_lines']/field[@name='order_line']/tree[1]/field[@name='tax_id']" position="after">
+                <field name="price_tax" optional="show"/>
+              </xpath>
+
+            </field>
+        </record>
+
+</odoo>

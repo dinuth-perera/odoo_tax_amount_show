@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <template id="report_saleorder_document_inherit_tax_amount" inherit_id="sale.report_saleorder_document">
+
+        <xpath expr="//th[@name='th_taxes']" position="after">
+        <!-- To Do : Implement show/hide logic based on res.config.settings -->
+            <th name="th_price_tax" class="text-end">Tax Amount</th>
+        </xpath>
+
+        <xpath expr="//td[@name='td_taxes']" position="after">
+        <!-- To Do : Implement show/hide logic based on res.config.settings -->
+            <td name="td_price_tax" class="text-end">
+                <span t-field="line.price_tax"/>
+            </td>
+        </xpath>
+
+    </template>
+
+</odoo>
